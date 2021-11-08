@@ -35,12 +35,12 @@ insert into book values(101,'CO','SWAPNA',2010),(102,'SE','MCRAW',2014),(103,'DM
 
 insert into library_programme values(10,'P1','BANGALORE'),(11,'P2','MANGALORE'),(12,'P3','NEW DELHI'),(13,'P4','CHENNAI');
 
-select book.book_id,title,publisher_name,publition_year,author_name, no_of_copies from book,book_author,book_copies where book.book_id=book_author.book
+1. select book.book_id,title,publisher_name,publition_year,author_name, no_of_copies from book,book_author,book_copies where book.book_id=book_author.book
 _id AND book.book_id=book_copies.book_id;
 
-select book.book_id,title,publisher_name,publition_year,author_name from book,book_author where book.book_id=book_author.book_id;
+3. select book.book_id,title,publisher_name,publition_year,author_name from book,book_author where book.book_id=book_author.book_id;
 
-select * from book,book_author where book.book_id=book_author.book_id;
+4.select * from book,book_author where book.book_id=book_author.book_id;
 
 5. select book.book_id,title,publisher_name,author_name,no_of_copies from book,book_author,book_copies where book.book_id=book_author.book_id and book.book_id=book_copies.boo
 k_id;
