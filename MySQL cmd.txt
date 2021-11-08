@@ -44,3 +44,5 @@ _id AND book.book_id=book_copies.book_id;
 
 5. select book.book_id,title,publisher_name,author_name,no_of_copies from book,book_author,book_copies where book.book_id=book_author.book_id and book.book_id=book_copies.boo
 k_id;
+
+select count(*) from book;
