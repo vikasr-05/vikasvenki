@@ -46,3 +46,14 @@ _id AND book.book_id=book_copies.book_id;
 k_id;
 
 select count(*) from book;
+
+select count(*) from book;
+
+insert into book_lending values(100,10,'MANGALORE',1,'2018-01-10','2018-01-16');
+insert into book_lending values(101,11,'MANGALORE',2,'2018-02-11','2018-02-17');
+insert into book_lending values(102,12,'NEW DELHI',3,'2018-03-05','2018-03-11');
+insert into book_lending values(103,13,'CHENNAI',4,'2018-04-01','2018-04-06');
+
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
