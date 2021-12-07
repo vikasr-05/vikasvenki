@@ -1,1 +1,6 @@
-
+create table customer(customer_id integer(10) primary key,customer_name varchar(20),city varchar(20),grade integer(10),salesman_id integer(20),foreign key(salesman_id) references salseman(salesman_id)on delete cascade);
+create table salesman(salesman_id integer(10) primary key,name varchar(20),city varchar(20),commission integer(10));
+ create table orders(ord_no integer(10) primary key,purchase_amount integer(10),ord_date date,customer_id integer(10), foreign key(customer_id) references customer(customer_id),salesman_id integer(10),foreign key(salesman_id) references salesman(salesman_id) on delete cascade);
+ insert into salesman values(10,'akash','manglore',2),(20,'ram','banglore',10),(30,'raj','manglore',5),(40,'kiran','mysore',15),(50,'shreya','banglore'3);
+insert into customer values(1000,'avinash','manglore',400,10),(2000,'kumar','udupi',200,20),(3000,'prethi','mysore',300,40),(4000,'smitha','manglore',300,30),(5000,'varshini','mysore',400,50);
+insert into orders values(551,5000,'2020-01-04',1000,10),(552,2500,'2020-02-07',2000,20),(553,500,'2020-03-03',3000,40),(554,1500,'2020-04-02',4000,30),(555,2000,'2020-05-03',2000,10);
