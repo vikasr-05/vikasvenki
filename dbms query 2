@@ -22,4 +22,12 @@ update customer set city='banglore' where customer_id=4000;
 q3
 
 
- (select salesman_id from salesman as s where exists(select * from customer as c where c.salesman_id=s.salesman_id and c.city=s.city))union(select salesman_id from salesman where not exists(select * from customer  where customer.salesman_id=salesman.salesman_id and customer.city=salesman.city));
+ (select salesman_id from salesman as s where exists(select * from customer as c where c.salesman_id=s.salesman_id and c.city=s.city))union(select salesman_id from salesman where not exists(select * from customer  where customer.salesman_id=salesman.salesman_id and customer.city=salesman;
++-------------+; 
+q4
+create view  higest_ord_per_day as select salesman_id,name,ord_date from orders natural join salesman where(purchase_amount,ord_date) in (select max(purchase_amount),ord_date from orders group by ord_date);
+
+
+q5
+
+delete from salesman where salesman_id=1000;
