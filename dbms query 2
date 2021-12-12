@@ -19,3 +19,7 @@ update customer set city='banglore' where customer_id=4000;
    
     insert into customer values(6000,'vishwas','shimoga',300,10);
      select salesman.salesman_id,name,count(*) from salesman ,customer  where salesman.salesman_id=customer.salesman_id group by salesman.salesman_id having count(*)>1;
+q3
+
+
+ (select salesman_id from salesman as s where exists(select * from customer as c where c.salesman_id=s.salesman_id and c.city=s.city))union(select salesman_id from salesman where not exists(select * from customer  where customer.salesman_id=salesman.salesman_id and customer.city=salesman.city));
