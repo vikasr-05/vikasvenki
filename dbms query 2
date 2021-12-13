@@ -31,3 +31,5 @@ create view  higest_ord_per_day as select salesman_id,name,ord_date from orders 
 q5
 
 delete from salesman where salesman_id=1000;
+
+
