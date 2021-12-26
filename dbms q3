@@ -1,0 +1,9 @@
+ insert into director values(21,'rajmouli',987654321),(22,'prashanth_neel',876543210),(23,'trivikram',765432109),(24,'sukumar',654321098),(25,'puri_jaganatham',543210987);
+ 
+ 
+  insert into actor values(11,'alu_arjun','male'),(12,'prabhas','male'),(13,'yash','male'),(14,'ntr','male'),(15,'pooja','female');
+  
+   insert into movies values(111,'bhahubali',2014,'telugu',21),(112,'kgf',2018,'kannada',22),(113,'aravinda',2017,'telugu',23),(114,'pushpa',2021,'telugu',24),(115,'dj',2017,'telugu',25);
+   
+   
+    insert into movie_cast values(11,114,'hero'),(14,113,'hero'),(12,111,'hero'),(13,112,'hero'),(15,115,'heroien');
