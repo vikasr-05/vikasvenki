@@ -1,0 +1,95 @@
+import java.io.*;
+import java.util.*;
+public class Bellmanford{
+				public static void main(String args[])
+				{
+					int nov=0, source=0;
+					Scanner sc= new Scanner(System.in);
+					System.out.println("enter the num of vertices :");
+					nov=sc.nextInt();
+					int adjmat[][]=new int[nov+1][nov+1];
+					System.out.println("enter the adjacency matrix :");
+					for(int sn=1;sn<=nov;sn++)
+					{
+						for(int dn=1;dn<=nov;dn++)
+						{
+							adjmat[sn][dn]=sc.nextInt();
+							if(sn==dn)
+							{
+								adjmat[sn][sn]=0;
+								continue;
+							}
+							if(adjmat[sn][dn]==0)
+							{
+							adjmat[sn][dn]=999;
+							}	
+					
+						} 
+					}
+						
+					System.out.println("Enter the source vertex: ");
+					source=sc.nextInt();
+					Bellmanford bf=new Bellmanford(nov);
+					bf.bfevalution(source,adjmat);
+					sc.close();
+				}		
+
+		private int nov;
+		private int distance[];
+		public 	Bellmanford(int nov)
+		{
+			this.nov=nov;
+			
+			distance=new int[nov+1];
+		}
+		public void bfevalution(int source,int adjmat[][])
+	        {
+	        	for(int node=1;node<=nov;node++)
+	        	{
+	        	
+	        		distance[node]=999;
+	        	}
+				distance[source]=0;
+				for(int node=1;node<=nov;node++)
+				{
+					for(int sn=1;sn<=nov;sn++)
+					{
+						for(int dn=1;dn<=nov;dn++)
+						{
+							if(adjmat[sn][dn]!=0)
+							{
+								if(distance[dn]>distance[sn]+adjmat[sn][dn])
+								{	
+									distance[dn]=distance[sn]+adjmat[sn][dn];
+								}
+							}		
+						}
+					}
+			       }
+				for(int sn=1;sn<=nov;sn++)
+				{
+					for( int dn=1;dn<=nov;dn++)
+					{
+						if(adjmat[sn][dn]!=999)
+						{
+							if(distance[dn]>(distance[sn]+adjmat[sn][dn]))
+							{
+							
+							System.out.println("The graph contains negative edge cycle: ");
+							}
+						}
+						
+					}
+				}
+				for(int vertex=1;vertex<=nov;vertex++)
+				{
+					
+								
+                                    System.out.println("Distance from "+source+"to "+vertex+" is "+distance[vertex]);
+
+
+				}
+			       
+		      }
+		}      	       
+		
