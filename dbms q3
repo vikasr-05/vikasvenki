@@ -14,3 +14,9 @@
     
     q3
     select  act_name,act_id from movie_cast m  natural join actor natural join movies where mov_year<2000 or mov_year>2015;
+    
+    
+    q4
+    
+     update rating set rev_stars=5 where mov_id=(select m.mov_id from director d,movies m where m.dir_id=d.dir_id and d.dir_name='steven_spielberg');
+Query OK, 0 rows affected (0.00 sec)
