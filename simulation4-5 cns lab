@@ -157,3 +157,24 @@ $ns at $val(stop) "$ns nam-end-wireless $val(stop)"
 $ns at $val(stop) "finish"
 $ns at $val(stop) "puts \"done\" ; $ns halt"
 $ns run
+
+
+
+for awk file 
+BEGIN{
+	count=0;
+	packet=0;
+	time=0;
+	}
+	{
+		if($1=="r" && $3=="_2_" && $4=="AGT")
+		{
+			count1++;
+			packet1=packet+$8;
+			time1=$2;
+		}
+		
+	}
+END{
+	printf("the throughput from node1 to node3 is %f mbps",(count1*packet1*8)/(time1*1000000));
+   }	
